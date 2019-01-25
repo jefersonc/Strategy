@@ -1,0 +1,44 @@
+{
+    "name": "jefersonc/Strategy",
+    "type": "library",
+    "description": "A simple implementation for strategy pattern in PHP.",
+    "keywords": [
+        "jefersonc",
+        "Strategy"
+    ],
+    "homepage": "https://github.com/jefersonc/Collection",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeferson Capobianco",
+            "email": "jefersoncapobianco@gmail.com",
+            "homepage": "http://jefersonc.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=5.4.3",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "jefersonc\\Strategy\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "jefersonc\\Strategy\\Examples\\": "example"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --config phpunit.xml --testsuite=all",
+        "check-style": "phpcs src",
+        "fix-style": "phpcbf src"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
