@@ -9,7 +9,7 @@ class Adiction implements StrategyContract
     private $a;
     private $b;
 
-    public function __construct(int $a, int $b) {
+    public function __construct($a, $b) {
         $this->a = $a;
         $this->b = $b;
     }

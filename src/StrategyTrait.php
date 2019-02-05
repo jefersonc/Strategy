@@ -8,12 +8,28 @@ trait StrategyTrait
 
     static public function apply(string $index, ...$params)
     {
+        $map = static::instance()->map();
+
+        $class = $map[$index];
+
+        return (new $class(...$params))();
+    }
+
+    private static function instance () {
         if(static::$implementation === null) {
             static::$implementation = new self();
         }
 
-        $map = static::$implementation->map();
-
-        return new $map[$index](...$params);
+        return static::$implementation;
     }
+
+    static public function get(string $class)
+    {
+        $map = static::instance()->map();
+
+        $class = $map[$index];
+
+        return new $map[$index];
+    }
+
 }
