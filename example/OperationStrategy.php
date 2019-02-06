@@ -2,18 +2,18 @@
 
 namespace jefersonc\Strategy\Examples;
 
-use jefersonc\Strategy\Strategy;
-use jefersonc\Strategy\StrategyTrait;
+use jefersonc\Strategy\Engine as Strategy;
 
-final class OperationStrategy implements Strategy
+final class OperationStrategy extends Strategy
 {
-    use StrategyTrait;
-
     public function map()
     {
         return [
             'adiction' => Adiction::class,
-            'subtraction' => Subtraction::class
+            'subtraction' => Subtraction::class,
+            'division' => function($a, $b) {
+                return $a / $b;
+            }
         ];
     }
 }
